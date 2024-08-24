@@ -111,6 +111,9 @@ df = user_input_features()
 st.subheader('User Input Parameters')
 st.write(df)
 
+# Handle missing values by filling with 0 (or other appropriate value)
+df.fillna(0, inplace=True)
+
 # Scale the input data
 scaled_df = scaler.transform(df)
 
@@ -122,5 +125,4 @@ st.write(prediction)
 
 # Optionally, display prediction probability
 prediction_proba = model.predict_proba(scaled_df)
-st.subheader('Prediction Probability')
-st.write(prediction_proba)
+st.subheader
